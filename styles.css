@@ -16,7 +16,7 @@
     --card-bg: #ffffff;
     --text-main: #334155;
     --text-muted: #64748b;
-    --font-family: 'Inter', sans-serif;
+    --font-family: 'Raleway', sans-serif;
 }
 
 * {
@@ -26,10 +26,10 @@
 }
 
 body {
-    font-family: var(--font-family);
     background-color: var(--bg-color);
     color: var(--text-main);
     line-height: 1.6;
+    font-family: var(--font-family);
 }
 
 .container {
@@ -65,11 +65,6 @@ body {
     padding: 1.2rem 0;
 }
 
-/* Logo adaptado para fondo oscuro */
-img {
-    width: 180px;
-}
-
 .nav-links {
     list-style: none;
     display: flex;
@@ -95,31 +90,55 @@ img {
     box-shadow: 0 5px 15px rgba(37, 99, 235, 0.4);
     color: #ffffff;
 }
+.logoheader {
+    width: 220px; 
+}
 
-/* --- Hero Section (Limpia y Clara) --- */
 .hero {
     background-color: var(--card-bg);
-    color: var(--primary-blue);
-    padding: 5rem 0;
-    margin-bottom: 3.5rem;
-    border-bottom: 1px solid #e2e8f0;
+    padding: 0;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
 }
 
-.hero h1 {
-    font-size: 2.8rem;
-    margin-bottom: 1rem;
-    font-weight: 300px;
-    letter-spacing: -1px;
-    color: rgb(16, 16, 44)
+.hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, rgba(15, 23, 42, 0.55) 0%, rgba(15, 23, 42, 0.28) 40%, rgba(15, 23, 42, 0.08) 100%);
+    pointer-events: none;
 }
 
-.hero p {
-    font-size: 1.15rem;
-    color: var(--text-muted);
-    max-width: 650px;
-    font-family: Arial, Helvetica, sans-serif;
-    margin: 0 auto;
+.hero-copy {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0 clamp(1.25rem, 6vw, 5rem);
 }
+
+.titul {
+    max-width: 10ch;
+    color: #ffffff;
+    font-size: clamp(2rem, 5vw, 4.5rem);
+    line-height: 1;
+    font-weight: 800;
+    text-shadow: 0 4px 18px rgba(0,0,0,0.35);
+    margin: 0;
+}
+
+.img-hero,
+.hero-img {
+    width: 100%;
+    display: block;
+    height: clamp(260px, 38vw, 520px);
+    object-fit: cover;
+    object-position: center;
+}
+
 
 /* --- Filtros (Botones de Pestañas con Gradiente Rojo) --- */
 .filters {
@@ -139,8 +158,8 @@ img {
     font-weight: 600;
     cursor: pointer;
     transition: all 0.3s ease;
-    font-family: inherit;
-    font-size: 0.95rem;
+    
+    
 }
 
 .filter-btn:hover {
@@ -225,8 +244,6 @@ img {
     background: var(--grad-btn-red); /* Gradiente rojo aplicado aquí */
     color: #ffffff;
     font-weight: 700;
-    font-family: inherit;
-    font-size: 1rem;
     cursor: pointer;
     transition: all 0.3s ease;
 }
@@ -254,6 +271,19 @@ footer {
         flex-wrap: wrap;
         justify-content: center;
     }
-    .hero h1 { font-size: 2.2rem; }
-    .hero { padding: 3.5rem 0; }
+    .hero { padding: 0; }
+    .img-hero,
+    .hero-img { height: clamp(220px, 52vw, 340px); }
+    .hero::after {
+        background: linear-gradient(180deg, rgba(15, 23, 42, 0.55) 0%, rgba(15, 23, 42, 0.2) 100%);
+    }
+    .hero-copy {
+        justify-content: center;
+        text-align: center;
+        padding: 0 1.25rem;
+    }
+    .titul {
+        max-width: 12ch;
+        font-size: clamp(1.8rem, 7vw, 2.8rem);
+    }
 }

@@ -1,4 +1,5 @@
 const examenesData = [
+    
     { 
         id: 1, 
         categoria: 'toeic', 
@@ -30,6 +31,8 @@ const examenesData = [
         descripcion: 'Complementa tu certificación evaluando tus habilidades activas de expresión oral y escrita.' 
     }
 ];
+
+
 
 const contenedorGrid = document.getElementById('examGrid');
 const botonesFiltro = document.querySelectorAll('.filter-btn');
