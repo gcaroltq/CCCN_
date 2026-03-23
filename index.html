@@ -4,55 +4,56 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Easy Exam Select | Centro Cultural Norteamericano</title>
-
     <!-- Google Fonts Raleway -->
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
     <!-- Tu CSS -->
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header class="navbar">
         <div class="container nav-container">
-            <div><img class="logoheader" src="img/Pa╠ügina web TOEIC Y TOEFL_Marca del Header.png" alt=""></div>
+            <div><img class="logoheader" src="img/CCCNlogo.png" alt=""></div>
             <nav>
                 <ul class="nav-links">
                     <li><a href="#" class="nav-btn">Inicio</a></li>
-                    <li><a href="#" class="nav-btn">Cursos</a></li>
-                    <li><a href="#" class="nav-btn active">Selección de Examen</a></li>
+                    <li><a href="#" class="nav-btn">Exámenes</a></li>
+                    <li><a href="#" class="nav-btn active contact-btn"><span class="contact-icon" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><path d="M22 16.92v3a2 2 0 0 1-2.18 2A19.86 19.86 0 0 1 11.2 18.8 19.5 19.5 0 0 1 5.2 12.8 19.86 19.86 0 0 1 2.08 4.09 2 2 0 0 1 4.07 2h3a2 2 0 0 1 2 1.72c.12.9.33 1.78.61 2.62a2 2 0 0 1-.45 2.11L8 9.89a16 16 0 0 0 6.11 6.11l1.44-1.23a2 2 0 0 1 2.11-.45c.84.28 1.72.49 2.62.61A2 2 0 0 1 22 16.92z"></path></svg></span><span>Contáctanos</span></a></li>
                 </ul>
             </nav>
         </div>
     </header>
-
     <main>
         <section class="hero">
-            <div class="hero-copy"><h1 class="titul">Pruebas internacionales</h1></div>
+            <div class="hero-copy">
+                <h1 class="titul">Pruebas internacionales</h1>
+                <p class="subtitul">Certificá tu nivel de inglés con las pruebas<br>TOEIC® y TOEFL® reconocidas mundialmente.<br><strong>Más de 80 años de trayectoria nos respaldan.</strong></p>
+                <button class="disponible"><span>Ver exámenes disponibles</span><span class="disponible-icon" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><path d="M6 9l6 6 6-6"></path></svg></span></button>
+            </div>
             <img class="img-hero" src="img/Pa╠ügina web TOEIC Y TOEFL_Hero Background.png" alt="Imagen de fondo">
         </section>
-
         <section class="selection-area">
             <div class="container">
+                
+                <div class="benefits">
+                    <div><p>Certificación oficial ETS®</p></div>
+                    <div><p>Reconocimiento en +160 países</p></div>
+                    <div><p>+80 años de experiencia</p></div>
+                </div>
                 <div class="filters">
-                    <button class="filter-btn active" data-filter="todos">Todos</button>
                     <button class="filter-btn" data-filter="toeic">TOEIC</button>
                     <button class="filter-btn" data-filter="toefl">TOEFL</button>
                     <button class="filter-btn" data-filter="michigan">Michigan / MET</button>
                 </div>
-
-                <div class="exam-grid" id="examGrid">
-                </div>
+                <div class="exam-grid" id="examGrid"></div>
             </div>
         </section>
     </main>
-
     <footer>
         <div class="container text-center">
             <p>&copy; 2026 Centro Cultural Costarricense Norteamericano. Todos los derechos reservados.
 TOEIC® y TOEFL® son marcas registradas de ETS®.</p>
         </div>
     </footer>
-
     <script src="script.js"></script>
 </body>
 </html>

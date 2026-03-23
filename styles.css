@@ -77,9 +77,14 @@ body {
     color: #000000;
     font-weight: 600;
     font-size: 0.95rem;
-    padding: 0.7rem 1.4rem;
-    border-radius: 50px; /* Estilo píldora moderna */
+    padding: 8px;
+    padding-right: 15px;
+    padding-left: 15px;
+    border-radius: 10px; /* Estilo píldora moderna */
     background: transparent;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
     transition: all 0.4s ease;
 }
 
@@ -87,11 +92,50 @@ body {
     background: var(--bright-blue); /* Fallback */
     background: var(--grad-btn-blue); /* Gradiente azul aplicado aquí */
     transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(37, 99, 235, 0.4);
+    box-shadow: 0 5px 15px ;
     color: #ffffff;
 }
+
+.contact-btn,
+.contact-btn:hover,
+.contact-btn.active {
+    background: #23487f;
+    color: #ffffff;
+    box-shadow: 0 10px 22px rgba(35, 72, 127, 0.28);
+}
+
+.contact-btn:hover,
+.contact-btn.active {
+    transform: translateY(-2px);
+    filter: brightness(1.03);
+}
+
+.contact-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.8rem;
+    height: 1.8rem;
+    border-radius: 999px;
+    background: transparent;
+    color: #ffffff;
+    line-height: 1;
+}
+
+.contact-icon svg {
+    width: 0.9rem;
+    height: 0.9rem;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
 .logoheader {
-    width: 220px; 
+    width: 190px;
+    margin-right: 10px; 
+    
 }
 
 .hero {
@@ -115,20 +159,84 @@ body {
     inset: 0;
     z-index: 2;
     display: flex;
-    align-items: center;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.9rem;
+    max-width: min(680px, 100%);
     justify-content: flex-start;
-    padding: 0 clamp(1.25rem, 6vw, 5rem);
+    padding: clamp(8rem, 5vw, 3rem) clamp(1.25rem, 6vw, 5rem);
 }
 
 .titul {
     max-width: 10ch;
     color: #ffffff;
     font-size: clamp(2rem, 5vw, 4.5rem);
-    line-height: 1;
-    font-weight: 800;
+    line-height: 0.95;
+    font-weight: 00;
+    letter-spacing: 0.01em;
+    -webkit-text-stroke: 0.6px rgba(255, 255, 255, 0.2);
     text-shadow: 0 4px 18px rgba(0,0,0,0.35);
     margin: 0;
 }
+.subtitul {
+    color: #ffffff;
+    width: max-content;
+    max-width: none;
+    font-size: clamp(1rem, 1vw, 1.25rem);
+    line-height: 1.35;
+    font-weight: 500;
+    text-shadow: 0 4px 18px rgba(0,0,0,0.35);
+    margin: 0;
+    white-space: nowrap;
+}
+
+.subtitul br {
+    display: block;
+    content: "";
+}
+
+.subtitul strong {
+    font-weight: 800;
+}
+
+.disponible {
+    margin-top: 1.5rem;
+    padding: 0.9rem 2rem;
+    border: none;
+    border-radius: 8px;
+    background-color: white;
+    color: #27487f;
+    font-family: var(--font-family);
+    font-weight: 700;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.disponible:hover{
+        background: #23487f;
+        color: #ffffff;
+        box-shadow: 0 10px 22px rgba(35, 72, 127, 0.28)
+}
+
+.disponible-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.disponible-icon svg {
+    width: 0.95rem;
+    height: 0.95rem;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2.4;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
 
 .img-hero,
 .hero-img {
@@ -137,6 +245,16 @@ body {
     height: clamp(260px, 38vw, 520px);
     object-fit: cover;
     object-position: center;
+}
+
+.benefits {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    margin-bottom: 3.5rem;
+    flex-wrap: wrap;
+    padding-top: 60px;
+
 }
 
 
@@ -279,11 +397,19 @@ footer {
     }
     .hero-copy {
         justify-content: center;
+        align-items: center;
         text-align: center;
         padding: 0 1.25rem;
+        max-width: 100%;
     }
     .titul {
         max-width: 12ch;
         font-size: clamp(1.8rem, 7vw, 2.8rem);
+    }
+    .subtitul {
+        width: auto;
+        max-width: 28ch;
+        font-size: clamp(0.95rem, 4vw, 1.1rem);
+        white-space: normal;
     }
 }
