@@ -324,7 +324,7 @@ body {
     display: grid;
     grid-template-columns: repeat(2, minmax(280px, 1fr));
     gap: 1.5rem 2rem;
-    max-width: 920px;
+    max-width: 980px;
     margin: 0 auto 3.5rem;
     
 }
@@ -332,7 +332,7 @@ body {
 
 .containers-text > div {
     width: 100%;
-    
+
 }
 
 .containers-text p,
@@ -343,23 +343,65 @@ body {
 .subtitulocontainer {
     color: #ffffff;
     background-color: #27487f;
-    font-size: 0.95rem;
+    font-size: 1rem;
     line-height: 1.4;
     font-weight: 500;
-    margin-bottom: 0.5rem;
-    padding: 7px 15px;
+    margin-bottom: 0.7rem;
+    padding: 8px 20px;
     border-radius: 12px 12px 0px 0px ;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 h3 {
     color: rgb(77, 75, 75);
-    font-size: 1.25rem;
-    font-weight: 700;
+    font-size: 1.2rem;
+    font-weight: 800;
     line-height: 1.2;
-    padding: 0.5rem 0;
-    padding-left: 10px;
+    width: 100%;
+    padding: 10px; padding-left: 20px;
+    margin-bottom: 0.85rem;
+    box-sizing: border-box;
 }
 
+.context{
+    color: #64748b;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    font-weight: 600;
+    width: 100%;
+    padding: 0 20px;
+    min-height: 3.2em;
+    box-sizing: border-box;
+}
+
+.cuadrotext{
+    background-color: #ffffff;
+    border-radius: 12px 12px 12px 12px;
+    padding: 0 0 0.95rem;
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 8px 24px rgba(15, 23, 42, 0.08);
+    border: 1px solid #eef2f7;
+    overflow: hidden;
+}
+
+.details-link {
+    
+    margin-right: 20px;
+    color: #4a76b8;
+    font-size: 0.95rem;
+    font-weight: 500;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+}
+
+.details-link:hover {
+    color: #23487f;
+}
 
 /* --- Filtros (Botones de Pestañas con Gradiente Rojo) --- */
 .filters {
@@ -519,4 +561,59 @@ footer {
         grid-template-columns: 1fr;
         gap: 1rem;
     }
+}
+
+.skill-tags {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.45rem;
+    padding: 0rem 20px 0;
+    margin-bottom: 0.95rem;
+}
+
+.skill-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.40rem 0.7rem;
+    border-radius: 999px;
+    background: #f1f2f4;
+    color: #6e7074;
+    font-size: 0.78rem;
+    font-weight: 600;
+    line-height: 1;
+    white-space: nowrap;
+}
+
+.skill-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 0.95rem;
+    height: 0.95rem;
+    color: #6e7074;
+}
+
+.skill-icon svg {
+    width: 100%;
+    height: 100%;
+    fill: currentColor;
+    stroke: none;
+}
+
+.details-link {
+    margin-top: auto;
+    padding: 0 10px;
+    color: #4a76b8;
+    font-size: 0.95rem;
+    font-weight: 500;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+}
+
+.details-link:hover {
+    color: #23487f;
 }
