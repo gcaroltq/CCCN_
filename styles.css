@@ -21,7 +21,7 @@
 
 .toeic-logo {
     width: min(290px, 100vw);
-    margin: 0 auto;
+    margin: 0 auto 1rem;
 }
 
 .toeic-logo svg,
@@ -30,6 +30,23 @@
     height: auto;
     display: block;
 }
+
+.toefl-logo {
+    width: min(300px, 100vw);
+    margin: 0 auto;
+}
+
+.toefl-logo img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+.tfl-logo{
+    width: min(300px, 100vw);
+    margin: 0px;
+    padding: 10px;
+}
+
 
 * {
     margin: 0;
@@ -323,15 +340,16 @@ body {
 .containers-text {
     display: grid;
     grid-template-columns: repeat(2, minmax(280px, 1fr));
-    gap: 1.5rem 2rem;
+    gap: 1.5rem 2.5rem;
     max-width: 980px;
-    margin: 0 auto 3.5rem;
+    margin: 0 auto 1rem;
     
 }
 
 
 .containers-text > div {
     width: 100%;
+    margin-bottom: 0px;
 
 }
 
@@ -387,9 +405,59 @@ h3 {
     overflow: hidden;
 }
 
+.cdrtext{
+    background-color: #ffffff;
+    border-radius: 12px 12px 12px 12px;
+    padding: 0 0 0.95rem;
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 8px 24px rgba(15, 23, 42, 0.08);
+    border: 1px solid #eef2f7;
+    overflow: hidden;
+}
+
+.subcontainer{
+    color: #ffffff;
+    background-color: #27487f;
+    font-size: 1rem;
+    line-height: 1.4;
+    font-weight: 500;
+    margin-bottom: 0.7rem;
+    padding: 8px 20px;
+    border-radius: 12px 12px 0px 0px ;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.conteext{
+    color: #64748b;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    font-weight: 600;
+    width: 100%;
+    padding: 0 20px;
+    min-height: 3.2em;
+    box-sizing: border-box;
+}
+
+.cnttext{
+    display: grid;
+    grid-template-columns: repeat(2, minmax(280px, 1fr));
+    gap: 1.5rem 2.5rem;
+    max-width: 980px;
+    margin: 0 auto 3rem;
+    
+}
+
+.cnttext p,
+.cnttext h3 {
+    margin: 0;
+}
+
 .details-link {
     
-    margin-right: 20px;
+    margin-left: 20px;
     color: #4a76b8;
     font-size: 0.95rem;
     font-weight: 500;
@@ -561,6 +629,10 @@ footer {
         grid-template-columns: 1fr;
         gap: 1rem;
     }
+    .toefl-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
 }
 
 .skill-tags {
@@ -616,4 +688,11 @@ footer {
 
 .details-link:hover {
     color: #23487f;
+}
+
+hr {
+    border: none;
+    border-top: 2px solid #6e7074;
+    margin: 0px auto;
+    width: 50%;
 }
