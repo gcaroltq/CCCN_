@@ -586,10 +586,72 @@ h3 {
 
 /* --- Pie de página (Fondo Rojo Oscuro) --- */
 footer {
-    background: var(--dark-red);
-    padding: 3rem 0;
-    color: rgba(255, 255, 255, 0.95);
+    background: #3c56a4;
+    padding: 3rem 0 1rem;
+    color: rgba(255, 255, 255, 0.94);
     font-size: 0.95rem;
+}
+
+.footer-shell {
+    width: 100%;
+    max-width: 1300px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 2rem 2rem;
+}
+
+footer h4 {
+    margin: 0 0 0.65rem;
+    font-size: 1.1rem;
+    font-weight: 700;
+}
+
+.footer-kicker {
+    color: rgba(255, 255, 255, 0.72);
+    margin-bottom: 0.7rem;
+}
+
+.footer-brand img {
+    width: min(130px, 100%);
+    height: auto;
+    display: block;
+    margin-bottom: 0.9rem;
+}
+
+.footer-brand p,
+.footer-location p,
+.footer-legal p,
+footer li {
+    color: rgba(255, 255, 255, 0.76);
+    line-height: 1.5;
+}
+
+footer ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+footer li + li {
+    margin-top: 0.45rem;
+}
+
+footer a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.footer-legal {
+    grid-column: 1 / -1;
+    margin-top: 0.4rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.14);
+}
+
+.footer-legal p {
+    font-size: 0.82rem;
+    line-height: 1.45;
 }
 
 /* --- Responsive Design --- */
@@ -632,6 +694,12 @@ footer {
     .toefl-grid {
         grid-template-columns: 1fr;
         gap: 1rem;
+    }
+    .footer-shell {
+        grid-template-columns: 1fr;
+    }
+    .footer-legal {
+        grid-column: auto;
     }
 }
 
