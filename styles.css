@@ -1,21 +1,5 @@
 :root {
-    /* Paleta de colores vibrantes y contrastados */
-    --primary-blue: #ffffff;    
-    --secondary-blue: #1e3a8a;
-    --bright-blue: #2563eb;
-    --dark-red: #7f1d1d;     
-    --primary-red: #dc2626;
-    --bright-red: #ef4444;
-    
-    /* Gradientes puros para botones */
-    --grad-btn-blue: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
-    --grad-btn-red: linear-gradient(135deg, #b91c1c 0%, #ef4444 100%);
-    
-    /* Colores base */
-    --bg-color: #f8fafc;         
-    --card-bg: #ffffff;
-    --text-main: #334155;
-    --text-muted: #64748b;
+
     --font-family: 'Raleway', sans-serif;
 }
 
@@ -79,11 +63,13 @@ body {
 
 /* --- Barra de Navegación (Fondo Azul Oscuro) --- */
 .navbar {
-    background-color: var(--primary-blue);
+    background-color: rgba(255, 255, 255, 0.98);
     box-shadow: 0 4px 15px rgba(0,0,0,0.15);
     position: sticky;
     top: 0;
     z-index: 100;
+    opacity: 1;
+    backdrop-filter: none;
     animation: fadeInDown 0.7s ease-out forwards;
 }
 
@@ -91,7 +77,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1.2rem 0;
+    padding: 1rem 0;
 }
 
 .nav-links {
@@ -117,24 +103,28 @@ body {
     transition: all 0.4s ease;
 }
 
-.nav-btn:hover, .nav-btn.active {
-    background: var(--bright-blue); /* Fallback */
-    background: var(--grad-btn-blue); /* Gradiente azul aplicado aquí */
+.nav-btn:hover{
+    background: #23487f;
+    color: #ffffff;
+    box-shadow: 0 10px 22px rgba(35, 72, 127, 0.28);
     transform: translateY(-2px);
     box-shadow: 0 5px 15px ;
     color: #ffffff;
 }
 
-.contact-btn,
-.contact-btn:hover,
-.contact-btn.active {
+.contact-btn:hover {
     background: #23487f;
     color: #ffffff;
     box-shadow: 0 10px 22px rgba(35, 72, 127, 0.28);
 }
 
-.contact-btn:hover,
-.contact-btn.active {
+.contact-btn {
+    background: transparent;
+    color: #000000;
+    box-shadow: none;
+}
+
+.contact-btn:hover {
     transform: translateY(-2px);
     filter: brightness(1.03);
 }
@@ -143,17 +133,24 @@ body {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 1.8rem;
-    height: 1.8rem;
-    border-radius: 999px;
-    background: transparent;
-    color: #ffffff;
+    width: 0.95rem;
+    height: 0.95rem;
+    color: currentColor;
     line-height: 1;
+    opacity: 0;
+    width: 0;
+    overflow: hidden;
+    transition: opacity 0.25s ease, width 0.25s ease;
+}
+
+.contact-btn:hover .contact-icon {
+    opacity: 1;
+    width: 0.95rem;
 }
 
 .contact-icon svg {
-    width: 0.9rem;
-    height: 0.9rem;
+    width: 100%;
+    height: 100%;
     fill: none;
     stroke: currentColor;
     stroke-width: 2;
@@ -162,7 +159,7 @@ body {
 }
 
 .logoheader {
-    width: 190px;
+    width: 150px;
     margin-right: 10px; 
     
 }
@@ -594,7 +591,7 @@ footer {
 
 .footer-shell {
     width: 100%;
-    max-width: 1300px;
+    max-width: 1100px;
     margin: 0 auto;
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -613,7 +610,7 @@ footer h4 {
 }
 
 .footer-brand img {
-    width: min(130px, 100%);
+    width: min(120px, 100%);
     height: auto;
     display: block;
     margin-bottom: 0.9rem;
@@ -640,6 +637,34 @@ footer li + li {
 footer a {
     color: inherit;
     text-decoration: none;
+}
+
+.footer-contact a,
+.footer-location p {
+    display: inline-flex;
+    align-items: flex-start;
+    gap: 0.55rem;
+}
+
+.footer-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 0.95rem;
+    height: 0.95rem;
+    flex-shrink: 0;
+    margin-top: 0.12rem;
+    color: rgba(255, 255, 255, 0.66);
+}
+
+.footer-icon svg {
+    width: 100%;
+    height: 100%;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.9;
+    stroke-linecap: round;
+    stroke-linejoin: round;
 }
 
 .footer-legal {
