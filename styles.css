@@ -38,6 +38,10 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     background-color: var(--bg-color);
     color: var(--text-main);
@@ -187,19 +191,19 @@ body {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    justify-content: center;
     gap: 0.9rem;
-    max-width: min(680px, 100%);
-    justify-content: flex-start;
-    padding: clamp(8rem, 5vw, 3rem) clamp(1.25rem, 6vw, 5rem);
+    max-width: min(560px, 100%);
+    padding: clamp(2.5rem, 4.5vw, 4rem) clamp(2.25rem, 6vw, 5rem);
 }
 
 .titul {
-    max-width: 10ch;
+    max-width: 7ch;
     color: #ffffff;
-    font-size: clamp(2rem, 5vw, 4.5rem);
-    line-height: 0.95;
-    font-weight: 00;
-    letter-spacing: 0.01em;
+    font-size: clamp(2.2rem, 4.7vw, 4.1rem);
+    line-height: 0.92;
+    font-weight: 800;
+    letter-spacing: 0;
     -webkit-text-stroke: 0.6px rgba(255, 255, 255, 0.2);
     text-shadow: 0 4px 18px rgba(0,0,0,0.35);
     margin: 0;
@@ -208,8 +212,8 @@ body {
     color: #ffffff;
     width: max-content;
     max-width: none;
-    font-size: clamp(1rem, 1vw, 1.25rem);
-    line-height: 1.35;
+    font-size: clamp(1rem, 1.05vw, 1.08rem);
+    line-height: 1.3;
     font-weight: 500;
     text-shadow: 0 4px 18px rgba(0,0,0,0.35);
     margin: 0;
@@ -226,14 +230,15 @@ body {
 }
 
 .disponible {
-    margin-top: 1.5rem;
-    padding: 0.9rem 2rem;
+    margin-top: 1.35rem;
+    padding: 0.85rem 1.8rem;
     border: none;
-    border-radius: 8px;
+    border-radius: 10px;
     background-color: white;
     color: #27487f;
     font-family: var(--font-family);
     font-weight: 700;
+    font-size: 0.98rem;
     display: inline-flex;
     align-items: center;
     gap: 0.6rem;
@@ -332,6 +337,14 @@ body {
     align-items: center;
     text-align: center;
     padding: 0%;
+}
+
+.selection-area {
+    scroll-margin-top: 90px;
+}
+
+#toeic-bloque {
+    scroll-margin-top: 16px;
 }
 
 .containers-text {
@@ -680,6 +693,26 @@ footer a {
 }
 
 /* --- Responsive Design --- */
+@media (max-width: 1024px) {
+    .hero-copy {
+        padding: 4.5rem 2rem 2rem;
+        max-width: min(760px, 100%);
+    }
+    .benefits {
+        gap: 1.25rem 2rem;
+        padding-top: 2.5rem;
+    }
+    .containers-text,
+    .cnttext,
+    .toefl-grid {
+        grid-template-columns: repeat(2, minmax(240px, 1fr));
+        gap: 1.25rem;
+    }
+    .footer-shell {
+        gap: 1.5rem;
+    }
+}
+
 @media (max-width: 768px) {
     .nav-container {
         flex-direction: column;
@@ -688,10 +721,18 @@ footer a {
     .nav-links {
         flex-wrap: wrap;
         justify-content: center;
+        width: 100%;
+    }
+    .nav-btn {
+        font-size: 0.9rem;
+    }
+    .logoheader {
+        width: 130px;
+        margin-right: 0;
     }
     .hero { padding: 0; }
     .img-hero,
-    .hero-img { height: clamp(220px, 52vw, 340px); }
+    .hero-img { height: clamp(360px, 70vw, 460px); }
     .hero::after {
         background: linear-gradient(180deg, rgba(15, 23, 42, 0.55) 0%, rgba(15, 23, 42, 0.2) 100%);
     }
@@ -699,20 +740,51 @@ footer a {
         justify-content: center;
         align-items: center;
         text-align: center;
-        padding: 0 1.25rem;
+        padding: 1.5rem 1.25rem;
         max-width: 100%;
     }
     .titul {
         max-width: 12ch;
-        font-size: clamp(1.8rem, 7vw, 2.8rem);
+        font-size: clamp(1.6rem, 6.5vw, 2.6rem);
     }
     .subtitul {
         width: auto;
         max-width: 28ch;
-        font-size: clamp(0.95rem, 4vw, 1.1rem);
+        font-size: clamp(0.95rem, 3.8vw, 1.05rem);
         white-space: normal;
     }
+    .disponible {
+        padding: 0.85rem 1.15rem;
+        font-size: 0.92rem;
+    }
+    .benefits {
+        gap: 0.9rem;
+        padding-top: 2rem;
+        margin-bottom: 2.25rem;
+    }
+    .benefits > div {
+        width: 100%;
+        justify-content: center;
+        text-align: center;
+    }
+    .enter {
+        font-size: clamp(1.9rem, 7vw, 2.4rem);
+        margin-bottom: 1rem;
+    }
+    .text {
+        font-size: 1rem;
+        padding: 0 0.5rem;
+    }
+    .toeic-logo,
+    .toefl-logo,
+    .tfl-logo {
+        width: min(240px, 78vw);
+    }
     .containers-text {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    .cnttext {
         grid-template-columns: 1fr;
         gap: 1rem;
     }
@@ -720,11 +792,90 @@ footer a {
         grid-template-columns: 1fr;
         gap: 1rem;
     }
+    .subtitulocontainer,
+    .subcontainer,
+    h3,
+    .context,
+    .conteext,
+    .skill-tags,
+    .details-link {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
     .footer-shell {
         grid-template-columns: 1fr;
+        width: 90%;
     }
     .footer-legal {
         grid-column: auto;
+    }
+    hr {
+        width: 70%;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        width: 92%;
+    }
+    .nav-links {
+        gap: 0.6rem;
+    }
+    .nav-btn {
+        width: 100%;
+        justify-content: center;
+        padding: 0.75rem 1rem;
+    }
+    .hero-copy {
+        gap: 0.75rem;
+        padding: 1.25rem 1rem;
+    }
+    .img-hero,
+    .hero-img {
+        height: 400px;
+    }
+    .benefits p,
+    .skill-tag {
+        white-space: normal;
+    }
+    .cuadrotext,
+    .cdrtext {
+        border-radius: 10px;
+    }
+    .subtitulocontainer,
+    .subcontainer {
+        font-size: 0.9rem;
+        padding-top: 0.6rem;
+        padding-bottom: 0.6rem;
+    }
+    h3 {
+        font-size: 1.08rem;
+        margin-bottom: 0.65rem;
+    }
+    .titul {
+        max-width: 11ch;
+        font-size: clamp(1.45rem, 7vw, 2.1rem);
+        line-height: 1.02;
+    }
+    .subtitul {
+        max-width: 24ch;
+        font-size: 0.95rem;
+        line-height: 1.4;
+    }
+    .context,
+    .conteext {
+        font-size: 0.92rem;
+        min-height: auto;
+    }
+    .footer-brand img {
+        width: min(140px, 50vw);
+    }
+    .footer-contact a,
+    .footer-location p {
+        gap: 0.45rem;
+    }
+    hr {
+        width: 82%;
     }
 }
 

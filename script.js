@@ -36,6 +36,7 @@ const examenesData = [
 
 const contenedorGrid = document.getElementById('examGrid');
 const botonesFiltro = document.querySelectorAll('.filter-btn');
+const enlacesScroll = document.querySelectorAll('[data-scroll-target]');
 
 function renderizarExamenes(filtro = 'todos') {
     contenedorGrid.innerHTML = '';
@@ -65,6 +66,32 @@ botonesFiltro.forEach(boton => {
         boton.classList.add('active');
         renderizarExamenes(boton.dataset.filter);
     });
+});
+
+enlacesScroll.forEach((enlace) => {
+    enlace.addEventListener('click', (event) => {
+        event.preventDefault();
+        const targetId = enlace.dataset.scrollTarget;
+        const destino = document.getElementById(targetId);
+        const navbar = document.querySelector('.navbar');
+
+        if (!destino) return;
+
+        const navbarHeight = navbar ? navbar.offsetHeight : 0;
+        const top = destino.getBoundingClientRect().top + window.scrollY - navbarHeight - 8;
+
+        window.scrollTo({
+            top,
+            behavior: 'smooth'
+        });
+    });
+});
+
+window.addEventListener('load', () => {
+    if (window.location.hash) {
+        history.replaceState(null, '', window.location.pathname + window.location.search);
+        window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
+    }
 });
 
 renderizarExamenes();
