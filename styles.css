@@ -51,9 +51,10 @@ body {
 }
 
 .container {
-    width: 90%;
-    max-width: 1100px;
+    width: min(100%, 1240px);
+    max-width: 1240px;
     margin: 0 auto;
+    padding-inline: clamp(0.8rem, 2vw, 1.35rem);
 }
 
 .text-center {
@@ -82,7 +83,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem 0;
+    padding: clamp(0.95rem, 1.8vw, 1.2rem) 0;
 }
 
 .nav-links {
@@ -194,8 +195,11 @@ body {
     align-items: flex-start;
     justify-content: center;
     gap: 0.9rem;
-    max-width: min(560px, 100%);
-    padding: clamp(2.5rem, 4.5vw, 4rem) clamp(2.25rem, 6vw, 5rem);
+    justify-content: center;
+    width: min(100%, 1240px);
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: clamp(1.85rem, 3.8vw, 3rem) clamp(0.8rem, 2vw, 1.35rem);
 }
 
 .titul {
@@ -342,6 +346,7 @@ body {
 
 .selection-area {
     scroll-margin-top: 90px;
+    padding-inline: 0;
 }
 
 #toeic-bloque {
@@ -352,7 +357,7 @@ body {
     display: grid;
     grid-template-columns: repeat(2, minmax(280px, 1fr));
     gap: 1.5rem 2.5rem;
-    max-width: 980px;
+    max-width: 1240px;
     margin: 0 auto 1rem;
     
 }
@@ -470,7 +475,7 @@ h3 {
     display: grid;
     grid-template-columns: repeat(2, minmax(280px, 1fr));
     gap: 1.5rem 2.5rem;
-    max-width: 980px;
+    max-width: 1240px;
     margin: 0 auto 3rem;
     
 }
@@ -619,7 +624,7 @@ footer {
 
 .footer-shell {
     width: 100%;
-    max-width: 1100px;
+    max-width: 1240px;
     margin: 0 auto;
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -710,8 +715,8 @@ footer a {
 /* --- Responsive Design --- */
 @media (max-width: 1024px) {
     .hero-copy {
-        padding: 4.5rem 2rem 2rem;
-        max-width: min(760px, 100%);
+        padding: 2.3rem 1.2rem 1.9rem;
+        max-width: 1240px;
     }
     .benefits {
         gap: 1.25rem 2rem;
@@ -755,8 +760,8 @@ footer a {
         justify-content: center;
         align-items: flex-start;
         text-align: left;
-        padding: 1.5rem 1.25rem 1.75rem;
-        max-width: min(430px, 100%);
+        padding: 1.25rem 1rem 1.4rem 1.35rem;
+        max-width: min(1240px, 100%);
     }
     .titul {
         max-width: 8ch;
@@ -813,7 +818,7 @@ footer a {
     }
     .footer-shell {
         grid-template-columns: repeat(2, minmax(0, 1fr));
-        width: 92%;
+        width: 100%;
     }
     .footer-brand,
     .footer-legal {
@@ -842,7 +847,7 @@ footer a {
 
 @media (max-width: 480px) {
     .container {
-        width: 92%;
+        width: min(100%, 1240px);
     }
     .nav-links {
         gap: 0.6rem;
@@ -854,7 +859,7 @@ footer a {
     }
     .hero-copy {
         gap: 0.75rem;
-        padding: 1.25rem 1rem;
+        padding: 1.1rem 0.95rem 1.25rem;
         max-width: min(320px, 100%);
     }
     .img-hero,
