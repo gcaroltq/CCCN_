@@ -192,7 +192,7 @@ body {
 }
 
 .back-link:hover {
-    background: #6da5d9;
+    background: #005933;;
     color: #ffffff;
     box-shadow: 0 10px 22px rgba(35, 72, 127, 0.28);
     transform: translateY(-2px);
@@ -216,7 +216,6 @@ body {
     color: rgba(255, 255, 255, 0.92);
     margin: 14px 0;
 }
-
 .exam-overview {
     padding: 4rem 0 4.5rem;
 }
@@ -374,7 +373,6 @@ body {
     top: 108px;
     align-self: start;
 }
-
 .side-card {
     background: #ffffff;
     border-radius: 16px;
@@ -484,7 +482,6 @@ body {
     border-radius: 999px;
     transition: all 0.3s ease;
 }
-
 .modality-actions {
     display: flex;
     flex-wrap: wrap;
@@ -550,7 +547,6 @@ body {
     padding: 1rem 1.25rem;
     font-size: 0.96rem;
 }
-
 /* --- Pie de página (Fondo Rojo Oscuro) --- */
 footer {
     background: #3c56a4;
@@ -653,6 +649,31 @@ footer a {
     font-size: 0.82rem;
     line-height: 1.45;
     font-weight: 400;
+}
+
+.info-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    padding: 0.45rem 0.85rem;
+    border-radius: 999px;
+    background: #eef3fb;
+    font-weight: 500;
+}
+
+.info-tag::before {
+    content: "";
+    width: 0.95rem;
+    height: 0.95rem;
+    flex-shrink: 0;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2323487f' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='8'/%3E%3Cpath d='M9.5 12.5l1.8 1.8 3.2-4'/%3E%3C/svg%3E");
+}
+
+.requirements-grid {
+    display: grid;
 }
 
 @media (max-width: 768px) {
@@ -801,3 +822,4 @@ footer a {
         grid-template-columns: 1fr;
     }
 }
+
