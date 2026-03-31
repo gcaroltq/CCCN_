@@ -34,6 +34,7 @@
 const contenedorGrid = document.getElementById('examGrid');
 const botonesFiltro = document.querySelectorAll('.filter-btn');
 const enlacesScroll = document.querySelectorAll('[data-scroll-target]');
+const tarjetasEnlace = document.querySelectorAll('[data-card-link]');
 
 function renderizarExamenes(filtro = 'todos') {
     contenedorGrid.innerHTML = '';
@@ -81,6 +82,23 @@ enlacesScroll.forEach((enlace) => {
             top,
             behavior: 'smooth'
         });
+    });
+});
+
+tarjetasEnlace.forEach((tarjeta) => {
+    const destino = tarjeta.dataset.cardLink;
+
+    if (!destino) return;
+
+    tarjeta.addEventListener('click', (event) => {
+        if (event.target.closest('a, button')) return;
+        window.location.href = destino;
+    });
+
+    tarjeta.addEventListener('keydown', (event) => {
+        if (event.key !== 'Enter' && event.key !== ' ') return;
+        event.preventDefault();
+        window.location.href = destino;
     });
 });
 

@@ -47,6 +47,7 @@ body {
     color: var(--text-main);
     line-height: 1.6;
     font-family: var(--font-family);
+    overflow-x: hidden;
 }
 
 .container {
@@ -413,6 +414,8 @@ h3 {
     box-shadow: 0 8px 24px rgba(15, 23, 42, 0.08);
     border: 1px solid #eef2f7;
     overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
 }
 
 .cdrtext{
@@ -425,6 +428,18 @@ h3 {
     box-shadow: 0 8px 24px rgba(15, 23, 42, 0.08);
     border: 1px solid #eef2f7;
     overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.cuadrotext:hover,
+.cuadrotext:focus-visible,
+.cdrtext:hover,
+.cdrtext:focus-visible {
+    transform: translateY(-3px);
+    box-shadow: 0 14px 30px rgba(15, 23, 42, 0.12);
+    border-color: rgba(39, 72, 127, 0.2);
+    outline: none;
 }
 
 .subcontainer{
@@ -715,13 +730,13 @@ footer a {
 
 @media (max-width: 768px) {
     .nav-container {
-        flex-direction: column;
-        gap: 1.2rem;
+        flex-wrap: wrap;
+        gap: 1rem;
     }
     .nav-links {
         flex-wrap: wrap;
-        justify-content: center;
-        width: 100%;
+        justify-content: flex-end;
+        width: auto;
     }
     .nav-btn {
         font-size: 0.9rem;
@@ -738,19 +753,19 @@ footer a {
     }
     .hero-copy {
         justify-content: center;
-        align-items: center;
-        text-align: center;
-        padding: 1.5rem 1.25rem;
-        max-width: 100%;
+        align-items: flex-start;
+        text-align: left;
+        padding: 1.5rem 1.25rem 1.75rem;
+        max-width: min(430px, 100%);
     }
     .titul {
-        max-width: 12ch;
-        font-size: clamp(1.6rem, 6.5vw, 2.6rem);
+        max-width: 8ch;
+        font-size: clamp(1.85rem, 5.8vw, 2.9rem);
     }
     .subtitul {
         width: auto;
-        max-width: 28ch;
-        font-size: clamp(0.95rem, 3.8vw, 1.05rem);
+        max-width: 30ch;
+        font-size: clamp(0.95rem, 2.45vw, 1.02rem);
         white-space: normal;
     }
     .disponible {
@@ -780,16 +795,10 @@ footer a {
     .tfl-logo {
         width: min(240px, 78vw);
     }
-    .containers-text {
-        grid-template-columns: 1fr;
-        gap: 1rem;
-    }
-    .cnttext {
-        grid-template-columns: 1fr;
-        gap: 1rem;
-    }
+    .containers-text,
+    .cnttext,
     .toefl-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
         gap: 1rem;
     }
     .subtitulocontainer,
@@ -803,14 +812,31 @@ footer a {
         padding-right: 16px;
     }
     .footer-shell {
-        grid-template-columns: 1fr;
-        width: 90%;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        width: 92%;
     }
+    .footer-brand,
     .footer-legal {
-        grid-column: auto;
+        grid-column: 1 / -1;
     }
     hr {
         width: 70%;
+    }
+}
+
+@media (max-width: 560px) {
+    .nav-links {
+        width: 100%;
+        justify-content: center;
+    }
+    .containers-text,
+    .cnttext,
+    .toefl-grid,
+    .footer-shell {
+        grid-template-columns: 1fr;
+    }
+    .footer-legal {
+        grid-column: auto;
     }
 }
 
@@ -829,6 +855,7 @@ footer a {
     .hero-copy {
         gap: 0.75rem;
         padding: 1.25rem 1rem;
+        max-width: min(320px, 100%);
     }
     .img-hero,
     .hero-img {
@@ -853,12 +880,12 @@ footer a {
         margin-bottom: 0.65rem;
     }
     .titul {
-        max-width: 11ch;
+        max-width: 8ch;
         font-size: clamp(1.45rem, 7vw, 2.1rem);
         line-height: 1.02;
     }
     .subtitul {
-        max-width: 24ch;
+        max-width: 22ch;
         font-size: 0.95rem;
         line-height: 1.4;
     }
@@ -909,17 +936,19 @@ footer a {
     width: 0.95rem;
     height: 0.95rem;
     color: #2f67b2;
-    background: rgba(47, 103, 178, 0.12);
+    background: transparent;
     border-radius: 999px;
-    box-shadow: inset 0 0 0 1px rgba(47, 103, 178, 0.14);
+    box-shadow: none;
 }
 
 .skill-icon svg {
     width: 100%;
     height: 100%;
-    fill: currentColor;
+    fill: none;
     stroke: currentColor;
-    stroke-width: 0.55;
+    stroke-width: 1.8;
+    stroke-linecap: round;
+    stroke-linejoin: round;
 }
 
 .details-link {
