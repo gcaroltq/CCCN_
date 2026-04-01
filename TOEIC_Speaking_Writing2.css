@@ -81,17 +81,17 @@ body {
 }
 
 .contact-btn {
-    background: transparent;
-    color: #000000;
-    box-shadow: none;
+    background: #23487f;
+    color: #ffffff;
+    box-shadow: 0 10px 22px rgba(35, 72, 127, 0.22);
 }
 
 .contact-btn:hover {
-    background: #23487f;
-    color: #ffffff;
+    background: #ffffff;
+    color: #23487f;
     transform: translateY(-2px);
-    box-shadow: 0 10px 22px rgba(35, 72, 127, 0.28);
-    filter: brightness(1.03);
+    box-shadow: 0 10px 22px rgba(35, 72, 127, 0.18);
+    filter: brightness(1.01);
 }
 
 .contact-icon {
@@ -102,15 +102,10 @@ body {
     height: 0.95rem;
     color: currentColor;
     line-height: 1;
-    opacity: 0;
-    width: 0;
-    overflow: hidden;
-    transition: opacity 0.25s ease, width 0.25s ease;
-}
-
-.contact-btn:hover .contact-icon {
     opacity: 1;
     width: 0.95rem;
+    overflow: hidden;
+    transition: opacity 0.25s ease, width 0.25s ease;
 }
 
 .contact-icon svg {
