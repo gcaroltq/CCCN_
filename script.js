@@ -6,12 +6,6 @@
         descripcion: 'Evalúa tus habilidades de comprensión auditiva y lectura en inglés en el entorno laboral de manera rápida y precisa.'
     },
     {
-        id: 2,
-        categoria: 'toefl',
-        titulo: 'TOEFL iBT',
-        descripcion: 'Prueba de dominio del inglés de nivel superior, ampliamente aceptada por universidades e instituciones académicas.'
-    },
-    {
         id: 3,
         categoria: 'toefl',
         titulo: 'TOEFL ITP',

@@ -472,6 +472,15 @@ h3 {
     
 }
 
+.cnttext-single {
+    grid-template-columns: minmax(280px, 520px);
+    justify-content: center;
+}
+
+.cnttext-single > div {
+    width: 100%;
+}
+
 .cnttext p,
 .cnttext h3 {
     margin: 0;
